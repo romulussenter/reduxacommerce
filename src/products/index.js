@@ -1,7 +1,7 @@
 
 
 const reducer = (state={}, action) => {
-    console.log('cart state');
+    console.log(' Product stuff');
     return state;
 } 
 
