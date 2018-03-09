@@ -19,8 +19,28 @@ const initialState = [
   }
 ];
 const reducer = (state = initialState, action) => {
-  console.log(" Product stuff");
+    switch(action.type){
+      case "ADD_ITEM":
+      const position = action.payload.value;
+      const selectedItem = state[position];
+      const before = state.slice(0, position);
+      const after = state.slice(position + 1);
+      const newProduct = {
+        ...selectedItem,
+      count: selectedItem.count + 1
+    };
+      return [
+        ...before,
+        newProduct,
+        ...after
+      ];
+    
+      case "REMOVE_ITEM":
+      return state;
+      default:
+      state;
   return state;
+    }
 };
 
 export default reducer;
