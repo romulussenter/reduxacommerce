@@ -4,6 +4,7 @@ import "./App.css";
 import { connect } from "react-redux";
 
 import ProductList from "./ProductList";
+import SearchBar from './SearchBar';
 
 class App extends Component {
   render() {
