@@ -9,6 +9,7 @@ import SearchBar from './SearchBar';
 class App extends Component {
   render() {
     return <div>
+      <SearchBar />
       <ProductList products = {this.props.products}/>
     </div>;
   }
