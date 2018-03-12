@@ -3,8 +3,21 @@ import Product from './Product';
 
 
 const ProductList = props => {
-const ProductItems = props.products.map((product, index) => 
-<Product {...product} key={index} position={index}/>);
+  const ProductItems = Object.keys(props.products).map(id =>{
+    const lowerName = props.products[id].name.toLowerCase();
+    const lowerSearchTerm = props.searchTerm.toLowerCase();
+    if(lowerName.includes(lowerSearchTerm)){
+      return(
+        <Product {...props.products [id]} key={id} id={id}/>
+      )
+    }
+    else {
+      null
+    }
+    });
+    
+ 
+ 
   return (
     <ul>
       {ProductItems}
